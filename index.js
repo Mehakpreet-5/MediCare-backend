@@ -7,7 +7,7 @@ const loginRoute = require('./routes/login')
 const users = require('./routes/users/index')
 const appoint = require('./routes/appoint');
 // Allow requests from specific origin
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "http://localhost:3000", "https://medicare-14.netlify.app" }));
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
