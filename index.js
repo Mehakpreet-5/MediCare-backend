@@ -10,9 +10,6 @@ const appoint = require('./routes/appoint');
 // const allowedOrigins = ["http://localhost:3000", "https://medicare-14.netlify.app"];
 
 app.use(cors({
-// const cors = require("cors");
-
-app.use(cors({
   origin: ["http://localhost:3000", "https://medicare-14.netlify.app"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
