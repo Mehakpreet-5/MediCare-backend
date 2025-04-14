@@ -33,7 +33,7 @@ app.get("/data", (req, res) => {
 
 // ✅ CORS options
 const corsOptions = {
-  origin: "https://medicare-14.netlify.app", // 🔥 No trailing slash!
+  origin: "https://medicare-14.netlify.app", 
   methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
   credentials: true,
 };
@@ -50,7 +50,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// ✅ Handle preflight OPTIONS requests
+// ✅ Handle preflight OPTIONS requests////
 app.options("*", cors(corsOptions));
 
 
