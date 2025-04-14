@@ -7,7 +7,11 @@ const loginRoute = require('./routes/login')
 const users = require('./routes/users/index')
 const appoint = require('./routes/appoint');
 // Allow requests from specific origin
-app.use(cors({ origin: "http://localhost:3000", "https://medicare-14.netlify.app" }));
+// app.use(cors({ origin: "http://localhost:3000", "https://medicare-14.netlify.app" }));
+app.use(cors({
+  origin: ["http://localhost:3000", "https://medicare-14.netlify.app"]
+}));
+
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
@@ -22,4 +26,6 @@ app.get("/data", (req, res) => {
   res.json({ message: "Hello World" });
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+// app.listen(5000, () => console.log("Server running on port 5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
