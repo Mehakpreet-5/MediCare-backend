@@ -18,6 +18,10 @@ const appoint = require('./routes/appoint');
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Medicare backend is running!");
+});
+
 // Routes
 app.use('/api/bookings', book);  // Use the 'book' router for the '/api/bookings' path
 app.use('/api/signup', signupRoute);
