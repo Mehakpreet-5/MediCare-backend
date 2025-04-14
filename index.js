@@ -7,19 +7,15 @@ const loginRoute = require('./routes/login')
 const users = require('./routes/users/index')
 const appoint = require('./routes/appoint');
 // Allow requests from specific origin
-const allowedOrigins = ["http://localhost:3000", "https://medicare-14.netlify.app"];
+// const allowedOrigins = ["http://localhost:3000", "https://medicare-14.netlify.app"];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps or curl)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      return callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true // if using cookies or authorization headers
+// const cors = require("cors");
+
+app.use(cors({
+  origin: ["http://localhost:3000", "https://medicare-14.netlify.app"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
 }));
 
 
