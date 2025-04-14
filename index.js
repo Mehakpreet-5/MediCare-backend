@@ -9,13 +9,13 @@ const appoint = require('./routes/appoint');
 // Allow requests from specific origin
 // const allowedOrigins = ["http://localhost:3000", "https://medicare-14.netlify.app"];
 
-app.use(cors({
-  origin: ["http://localhost:3000", "https://medicare-14.netlify.app"],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
-}));
-
-
+app.use(cors())
+const corsOption = {
+  origin: "https://medicare-14.netlify.app/",
+  methods: "GET, POST,PUT,DELETE,PATCH, HEAD",
+  credentials : true,
+}
+app.use(cors(corsOption))
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
