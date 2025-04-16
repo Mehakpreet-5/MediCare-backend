@@ -69,7 +69,7 @@ const PORT = 5000;
 
 // ✅ CORS configuration
 app.use(cors({
-  origin: "https://medicare-14.netlify.app", "https://medicare-5.netlify.app",
+  origin: "https://medicare-5.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   credentials: true
 }));
